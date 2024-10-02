@@ -63,7 +63,7 @@ const GeneralChat = ({
 
   const getLastMessage = (user: any) => {
     return (
-      user?.messages[user?.messages.length - 1]?.content || "No messages yet."
+      user?.messages[user?.messages?.length - 1]?.content || "No messages yet."
     );
   };
 
@@ -83,7 +83,7 @@ const GeneralChat = ({
           ) : (
             <>
               <ul className="divide-y divide-gray-200">
-                {users && users.length > 0 ? (
+                {users && users?.length > 0 ? (
                   users.map((user:any, index:number) => (
                     <li
                       key={index}

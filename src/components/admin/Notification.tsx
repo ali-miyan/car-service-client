@@ -84,7 +84,7 @@ const Notification = () => {
                   </div>
                 </td>
               </tr>
-            ) : currentPosts && currentPosts.length > 0 ? (
+            ) : currentPosts && currentPosts?.length > 0 ? (
               currentPosts.map((post: Post, index: number) => (
                 <tr className="bg-white border-gray-300 border" key={post._id}>
                   <td className="px-6 py-4 whitespace-nowrap">

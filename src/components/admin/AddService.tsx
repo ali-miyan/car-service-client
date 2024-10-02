@@ -87,7 +87,7 @@ const AddYourService: React.FC = () => {
     const descriptionError = validateInput("description", formData.description);
     // const logoError = formData.logo ? "" : "Please provide a logo";
     const subServicesError =
-      formData.subServices.length < 2
+      formData.subServices?.length < 2
         ? "Please add at least two sub-service"
         : "";
 
