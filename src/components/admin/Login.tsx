@@ -6,11 +6,14 @@ import { notifyError, notifySuccess } from "../common/Toast";
 import { CustomError } from "../../schema/error";
 import { errMessage } from "../../constants/errorMessage";
 import LoadingButton from "../common/Loading";
+import { setAdminToken } from "../../context/OrderContext";
+import { useDispatch } from "react-redux";
 
 const Login: React.FC = () => {
 
   const [registerPost, { isLoading }] = useRegisterPostMutation();
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
@@ -51,6 +54,7 @@ const Login: React.FC = () => {
       const res = await registerPost({ email, password }).unwrap();
       if (res.success) {
         notifySuccess("you have logged in");
+        dispatch(setAdminToken(res.token));
         navigate("/admin/home");
       }
 

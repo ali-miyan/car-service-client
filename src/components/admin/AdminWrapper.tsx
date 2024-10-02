@@ -9,10 +9,13 @@ import {
 } from "react-icons/md";
 import { Link, useNavigate } from "react-router-dom";
 import DeleteConfirmationModal from "../common/ConfirmationModal";
+import { setAdminToken } from "../../context/OrderContext";
+import { useDispatch } from "react-redux";
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
 
   const [open, setOpen] = useState<boolean>(true);
+  const dispatch = useDispatch();
 
   const isActive = (path: string) => location.pathname === path;
 
@@ -21,6 +24,8 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
   const handleLogout = useCallback(() => {
     document.cookie =
       "adminToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      dispatch(setAdminToken(""));
+
     navigate("/admin/login");
   }, [navigate]);
 

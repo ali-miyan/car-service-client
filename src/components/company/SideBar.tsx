@@ -10,12 +10,14 @@ import { useBookingSocket } from "../../service/socketService";
 import OrderNOtification from "../common/OrderMessage";
 import { ReactNotifications } from "react-notifications-component";
 import CompanyNotificationModal from "./CompnayNotification";
+import { useDispatch } from "react-redux";
+import { setCompanyToken } from "../../context/OrderContext";
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
-
   const id = useMemo(() => GetInitialToken("companyToken"), []);
 
   const location = useLocation();
+  const dispatch = useDispatch();
 
   const { data: posts } = useGetCompanyByIdQuery(id as string);
   const companyData: Post = posts;
@@ -84,6 +86,8 @@ const Sidebar = ({ children }: { children: ReactNode }) => {
   const handleLogout = useCallback(() => {
     document.cookie =
       "companyToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    dispatch(setCompanyToken(""));
+
     navigate("/company/login");
   }, [navigate]);
 

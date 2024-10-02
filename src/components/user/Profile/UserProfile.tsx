@@ -13,10 +13,15 @@ import { GetInitialToken } from "../../../helpers/getToken";
 import EditProfileModal from "./EditProfileModal";
 import DeleteConfirmationModal from "../../common/ConfirmationModal";
 import { RiMailCheckLine } from "react-icons/ri";
+import { setUserToken } from "../../../context/OrderContext";
+import { useDispatch } from "react-redux";
 
 const Profile = () => {
   const navigate = useNavigate();
   const location = useLocation();
+
+  const dispatch = useDispatch();
+
   const queryParams = new URLSearchParams(location.search);
   const initialSection = queryParams.get("section") || "services";
 
@@ -46,6 +51,7 @@ const Profile = () => {
   const handleLogout = useCallback(() => {
     document.cookie =
       "userToken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      dispatch(setUserToken(''));
     navigate("/");
   }, [navigate]);
 

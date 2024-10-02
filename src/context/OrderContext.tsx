@@ -3,7 +3,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderSlice = createSlice({
   name: "order",
   initialState: {
-    token: "",
+    userToken: "",
+    adminToken:"",
+    companyToken:"",
     userId: "",
     serviceId: "",
     servicePlace: "",
@@ -20,8 +22,14 @@ const orderSlice = createSlice({
     setServiceId(state, action) {
       state.serviceId = action.payload;
     },
-    setToken(state, action) {
-      state.token = action.payload;
+    setUserToken(state, action) {
+      state.userToken = action.payload;
+    },
+    setCompanyToken(state, action) {
+      state.companyToken = action.payload;
+    },
+    setAdminToken(state, action) {
+      state.adminToken = action.payload;
     },
     setUserId(state, action) {
       state.userId = action.payload;
@@ -74,7 +82,7 @@ const orderSlice = createSlice({
 
 export const {
   setUserId,
-  setToken,
+  setUserToken,
   setServiceId,
   setServicePlace,
   setCompanyId,
@@ -86,6 +94,8 @@ export const {
   setPackage,
   resetOrder,
   setGeneralService,
+  setAdminToken,
+  setCompanyToken
 } = orderSlice.actions;
 
 export default orderSlice.reducer;

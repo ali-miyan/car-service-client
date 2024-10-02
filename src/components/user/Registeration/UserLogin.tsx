@@ -11,7 +11,7 @@ import { notifyError, notifySuccess } from "../../common/Toast";
 import { errMessage } from "../../../constants/errorMessage";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToken } from "../../../context/OrderContext";
+import { setUserToken } from "../../../context/OrderContext";
 
 interface LoginFormProps {
   onSwitchToSignup: () => void;
@@ -90,7 +90,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup }) => {
 
         if (res.success) {
           notifySuccess("you have logged in");
-          dispatch(setToken(res.token));
+          dispatch(setUserToken(res.token));
           navigate("/home");
         } else {
           setErrors((prevErrors) => ({

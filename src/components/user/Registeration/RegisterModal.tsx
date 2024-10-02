@@ -11,7 +11,7 @@ import { CustomError } from "../../../schema/error";
 import { useGoogleLogin } from "@react-oauth/google";
 import { notifyError, notifySuccess } from "../../common/Toast";
 import { useNavigate } from "react-router-dom";
-import { setToken } from "../../../context/OrderContext";
+import { setUserToken } from "../../../context/OrderContext";
 import { useDispatch } from "react-redux";
 
 interface BasicModalProps {
@@ -55,7 +55,7 @@ const BasicModal: React.FC<BasicModalProps> = ({ isOpen, onClose }) => {
       if (res.success) {
         notifySuccess("registered successfully");
         console.log(res);
-        dispatch(setToken(res.token));
+        dispatch(setUserToken(res.token));
         navigate("/home");
       }
     } catch (err) {
@@ -79,7 +79,7 @@ const BasicModal: React.FC<BasicModalProps> = ({ isOpen, onClose }) => {
         console.log(res);
         if (res.success) {
           notifySuccess("Successfully logged");
-          dispatch(setToken(res.token));
+          dispatch(setUserToken(res.token));
           navigate("/home");
         } else {
           notifyError("Something went wrong");
