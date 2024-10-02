@@ -1,7 +1,13 @@
-export const baseApiUrl = import.meta.env.VITE_BASE_API_URL || "http://localhost/api";
+export const baseOrderUrl = `${import.meta.env.VITE_ORDER_API_URL || 'http://localhost'}/api/order`;
+export const baseUserUrl = `${import.meta.env.VITE_USER_API_URL || 'http://localhost'}/api/user`;
+export const baseCompanyUrl = `${import.meta.env.VITE_COMPANY_API_URL || 'http://localhost'}/api/company`;
+export const baseAdminUrl = `${import.meta.env.VITE_ADMIN_API_URL || 'http://localhost'}/api/admin`;
+export const baseChatUrl = `${import.meta.env.VITE_CHAT_API_URL || 'http://localhost'}/api/chat`;
 
-export const baseOrderUrl = `${baseApiUrl}/order`;
-export const baseUserUrl = `${baseApiUrl}/user`;
-export const baseCompanyUrl = `${baseApiUrl}/company`;
-export const baseAdminUrl = `${baseApiUrl}/admin`;
-export const baseChatUrl = `${baseApiUrl}/chat`;
+console.log('API URLs:', {
+    baseOrderUrl,
+    baseUserUrl,
+    baseCompanyUrl,
+    baseAdminUrl,
+    baseChatUrl
+})
