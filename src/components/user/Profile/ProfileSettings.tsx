@@ -3,12 +3,12 @@ import { validateInput } from "../../../helpers/userValidation";
 import { notifyError, notifySuccess } from "../../common/Toast";
 import { errMessage } from "../../../constants/errorMessage";
 import { useChangePasswordMutation } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { CustomError } from "../../../schema/error";
 
 const ProfileSettings: React.FC = () => {
 
-  const userId = getInitialToken("userToken");
+  const userId = GetInitialToken("userToken");
   const [changePassword] = useChangePasswordMutation();
 
   const [currentPassword, setCurrentPassword] = useState<string>("");

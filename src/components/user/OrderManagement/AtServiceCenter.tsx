@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { RegistrationStep } from "../../common/OrderHeader";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { useGetCarByIdQuery } from "../../../store/slices/userApiSlice";
 import CarBrandsModal from "../Profile/CarBrandsModal";
 import { setCarModel } from "../../../context/OrderContext";
@@ -10,7 +10,7 @@ import { notifyError } from "../../common/Toast";
 
 const AtServiceCenter = () => {
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
   const { data: posts, refetch } = useGetCarByIdQuery(token as string);
 
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);

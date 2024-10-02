@@ -5,7 +5,7 @@ import { IoMdClose } from "react-icons/io";
 import "../../../styles/SideBarNotification.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import {
   useBookingSocket,
   useChatSocket,
@@ -17,7 +17,7 @@ import ChatSection from "./ChatSection";
 
 const NotificationModal = () => {
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   const { data } = useGetApprovedCompanyQuery({});
 

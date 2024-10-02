@@ -4,7 +4,7 @@ import { notifyError, notifySuccess } from "../../common/Toast";
 import { errMessage } from "../../../constants/errorMessage";
 import { validateInput } from "../../../helpers/userValidation";
 import { useEditUserMutation } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 
 interface EditProfileModalProps {
   onClose: () => void;
@@ -23,7 +23,7 @@ const EditProfileModal: React.FC<EditProfileModalProps> = ({
   currentImage,
   setNewProfileImg,
 }) => {
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   const [editUser] = useEditUserMutation({});
   

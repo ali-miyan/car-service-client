@@ -10,6 +10,8 @@ import { CustomError } from "../../../schema/error";
 import { notifyError, notifySuccess } from "../../common/Toast";
 import { errMessage } from "../../../constants/errorMessage";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setToken } from "../../../context/OrderContext";
 
 interface LoginFormProps {
   onSwitchToSignup: () => void;
@@ -18,6 +20,8 @@ interface LoginFormProps {
 const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup }) => {
 
   const [loginUser, { isLoading }] = useLoginUserMutation();
+
+  const dispatch = useDispatch();
   
   const navigate = useNavigate();
   const [isPasswordVisible, setPasswordVisibility] = useState(false);
@@ -86,6 +90,7 @@ const LoginForm: React.FC<LoginFormProps> = ({ onSwitchToSignup }) => {
 
         if (res.success) {
           notifySuccess("you have logged in");
+          dispatch(setToken(res.token));
           navigate("/home");
         } else {
           setErrors((prevErrors) => ({

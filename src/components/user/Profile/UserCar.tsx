@@ -4,7 +4,7 @@ import {
   useDeleteCarMutation,
   useGetCarByIdQuery,
 } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import DeleteConfirmationModal from "../../common/ConfirmationModal";
 import { AiFillDelete } from "react-icons/ai";
 import { notifyError, notifySuccess } from "../../common/Toast";
@@ -14,7 +14,7 @@ const UserCar = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
   const { data: posts, refetch } = useGetCarByIdQuery(token as string);
   const [deleteCar] = useDeleteCarMutation();
 

@@ -8,7 +8,7 @@ import { useMakeOrderMutation } from "../../../store/slices/orderApiSlice";
 import { useGetSinglServicesQuery } from "../../../store/slices/companyApiSlice";
 import { RegistrationStep } from "../../common/OrderHeader";
 import { loadStripe } from "@stripe/stripe-js";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import LoadingButton from "../../common/Loading";
 import { CustomError } from "../../../schema/error";
 import { notifyError } from "../../common/Toast";
@@ -28,7 +28,7 @@ const Checkout = () => {
     companyId,
   } = useSelector((state: any) => state.order);
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   
   const { data: user } = useGetUserByIdQuery(token as string);

@@ -3,7 +3,7 @@ import { FaLongArrowAltLeft } from "react-icons/fa";
 import { MdBook, MdConstruction, MdDashboard, MdLogout } from "react-icons/md";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useGetCompanyByIdQuery } from "../../store/slices/companyApiSlice";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 import { Post } from "../../schema/component";
 import DeleteConfirmationModal from "../common/ConfirmationModal";
 import { useBookingSocket } from "../../service/socketService";
@@ -13,7 +13,7 @@ import CompanyNotificationModal from "./CompnayNotification";
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
 
-  const id = useMemo(() => getInitialToken("companyToken"), []);
+  const id = useMemo(() => GetInitialToken("companyToken"), []);
 
   const location = useLocation();
 

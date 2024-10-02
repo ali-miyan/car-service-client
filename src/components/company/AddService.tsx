@@ -12,11 +12,11 @@ import { FaDotCircle, FaPlus } from "react-icons/fa";
 import CustomModal from "../common/Modal";
 import { Post } from "../../schema/component";
 import PackageContent from "./PackageContent";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 
 const AddYourService: React.FC = () => {
 
-  const companyId = getInitialToken("companyToken");
+  const companyId = GetInitialToken("companyToken");
 
   const { data: posts } = useGetServiceQuery(companyId as string);
   const [addService, { isLoading }] = useAddServiceMutation();
@@ -192,7 +192,7 @@ const AddYourService: React.FC = () => {
       return;
     }
 
-    const id = getInitialToken("companyToken");
+    const id = GetInitialToken("companyToken");
 
     const data = new FormData();
     data.append("generalServiceId", selectedService);

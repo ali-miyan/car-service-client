@@ -1,13 +1,13 @@
 import { useGetOrdersQuery } from "../../store/slices/orderApiSlice";
 import { Link } from "react-router-dom";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 import { useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Pagination from "../common/Pagination";
 
 const ListBooking = () => {
 
-  const companyId = getInitialToken("companyToken");
+  const companyId = GetInitialToken("companyToken");
   const location = useLocation();
 
   const {data: posts, isLoading, refetch} = useGetOrdersQuery(companyId as string);

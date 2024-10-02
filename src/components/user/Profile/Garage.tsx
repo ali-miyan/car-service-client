@@ -1,10 +1,10 @@
 import { useGetUsersOrderQuery } from "../../../store/slices/orderApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { Link } from "react-router-dom";
 
 const MyBookings = () => {
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
   const { data: orders, isLoading } = useGetUsersOrderQuery(token as string);
 
   if (isLoading) {

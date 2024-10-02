@@ -8,7 +8,7 @@ import {
 import { FaStar, FaTruckMoving } from "react-icons/fa";
 import { RiSecurePaymentLine } from "react-icons/ri";
 import { VscWorkspaceTrusted } from "react-icons/vsc";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { notifyError } from "../../common/Toast";
 import TermsAndService from "./TermsAndService";
 import { useDispatch } from "react-redux";
@@ -21,7 +21,7 @@ import OrderDetailSkeleton from "../../../layouts/skelotons/OrderDetailSkeleton"
 import { BiLike, BiDislike, BiSolidLike, BiSolidDislike } from "react-icons/bi";
 
 const SelectedService = () => {
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   const { id } = useParams<{ id: string }>();
   const location = useLocation();

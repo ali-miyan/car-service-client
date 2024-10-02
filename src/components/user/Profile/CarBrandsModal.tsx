@@ -21,7 +21,7 @@ import { validateInput } from "../../../helpers/userValidation";
 import { notifyError, notifySuccess } from "../../common/Toast";
 import { errMessage } from "../../../constants/errorMessage";
 import { useAddCarMutation } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { ModalPopsCustom } from "../../../schema/component";
 
 const brandToCarsMap: any = {
@@ -54,7 +54,7 @@ const CarBrandsModal: React.FC<ModalPopsCustom> = ({
   onClose,
   refetch,
 }) => {
-  const userId = getInitialToken("userToken");
+  const userId = GetInitialToken("userToken");
   const [addCar] = useAddCarMutation({});
 
   const [selectedBrand, setSelectedBrand] = useState<string | null>(null);

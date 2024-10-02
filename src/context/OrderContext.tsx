@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const orderSlice = createSlice({
   name: "order",
   initialState: {
+    token: "",
     userId: "",
     serviceId: "",
     servicePlace: "",
@@ -18,6 +19,9 @@ const orderSlice = createSlice({
   reducers: {
     setServiceId(state, action) {
       state.serviceId = action.payload;
+    },
+    setToken(state, action) {
+      state.token = action.payload;
     },
     setUserId(state, action) {
       state.userId = action.payload;
@@ -49,8 +53,9 @@ const orderSlice = createSlice({
     setGeneralService(state, action) {
       state.generalServiceId = action.payload;
     },
-    resetOrder() {
+    resetOrder(state) {
       return {
+        ...state,
         userId: "",
         serviceId: "",
         servicePlace: "",
@@ -69,6 +74,7 @@ const orderSlice = createSlice({
 
 export const {
   setUserId,
+  setToken,
   setServiceId,
   setServicePlace,
   setCompanyId,

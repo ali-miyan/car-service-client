@@ -6,13 +6,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { useCallback, useState } from "react";
 import { setAddress, setCarModel } from "../../../context/OrderContext";
 import { useGetCarByIdQuery } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { FaMapMarkerAlt } from "react-icons/fa";
 import CustomModal from "../../common/Modal";
 import { notifyError } from "../../common/Toast";
 
 const CustomerDetails = () => {
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
   const { data: posts, refetch } = useGetCarByIdQuery(token as string);
 
   const [isCarModalOpen, setCarModalOpen] = useState<boolean>(false);

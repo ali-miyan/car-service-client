@@ -12,13 +12,13 @@ import ListPackages from "./ListPackages";
 import DeleteConfirmationModal from "../common/ConfirmationModal";
 import { AiFillDelete } from "react-icons/ai";
 import { Link } from "react-router-dom";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 import { useLocation } from "react-router-dom";
 import Pagination from "../common/Pagination";
 import { useBookingSocket } from "../../service/socketService";
 
 const ServiceList = () => {
-  const companyId = getInitialToken("companyToken");
+  const companyId = GetInitialToken("companyToken");
 
   const {data: posts,isLoading,refetch,} = useGetServicesQuery(companyId as string);
   const [deleteServicePost] = useDeleteServicePostMutation();

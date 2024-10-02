@@ -10,7 +10,7 @@ import {
   Legend,
 } from "chart.js";
 import "tailwindcss/tailwind.css";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 import { useGetMonthlyRevenueQuery } from "../../store/slices/orderApiSlice";
 import { FaSpinner } from "react-icons/fa";
 import { months } from "../../schema/component";
@@ -26,7 +26,7 @@ ChartJS.register(
 );
 
 const Dashboard = () => {
-  const companyId = getInitialToken("companyToken");
+  const companyId = GetInitialToken("companyToken");
 
   const { data: revenue = [], isLoading } = useGetMonthlyRevenueQuery(
     companyId as string

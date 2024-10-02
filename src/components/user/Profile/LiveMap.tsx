@@ -3,7 +3,7 @@ import mapboxgl from "mapbox-gl";
 import axios from "axios";
 import polyline from "polyline";
 import { useBookingSocket } from "../../../service/socketService";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 
 mapboxgl.accessToken = import.meta.env.VITE_REACT_APP_MAPBOX_TOKEN
 
@@ -13,7 +13,7 @@ const MapboxMap = ({
   userDetails,
   companyDetails,
 }: any) => {
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   const mapContainer = useRef<HTMLDivElement | null>(null);
   const [map, setMap] = useState<mapboxgl.Map | null>(null);

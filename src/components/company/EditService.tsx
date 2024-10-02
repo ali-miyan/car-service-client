@@ -12,12 +12,12 @@ import { useGetServiceQuery } from "../../store/slices/adminApiSlice";
 import { FaDotCircle, FaPlus } from "react-icons/fa";
 import CustomModal from "../common/Modal";
 import PackageContent from "./PackageContent";
-import { getInitialToken } from "../../helpers/getToken";
+import { GetInitialToken } from "../../helpers/getToken";
 import { CustomError } from "../../schema/error";
 import { errMessage } from "../../constants/errorMessage";
 
 const AddYourService: React.FC = () => {
-  const token = getInitialToken("companyToken");
+  const token = GetInitialToken("companyToken");
 
   const { id } = useParams<{ id: string }>();
 

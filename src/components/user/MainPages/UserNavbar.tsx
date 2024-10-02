@@ -6,7 +6,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from "react-icons/fa";
 import { LuUserCircle } from "react-icons/lu";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import ServiceMap from "./serviceMap";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { FaMapMarkedAlt } from "react-icons/fa";
 import { useUserSocket } from "../../../service/socketService";
 import NotificationModal from "./SideNotifacation";
@@ -15,7 +15,7 @@ import { useGetUserByIdQuery } from "../../../store/slices/userApiSlice";
 
 const UserNavbar = () => {
 
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
 
   const { data: posts } = useGetUserByIdQuery(token as string);
 

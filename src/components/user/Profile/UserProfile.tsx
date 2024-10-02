@@ -9,7 +9,7 @@ import Garage from "./Garage";
 import Wallet from "./Wallet";
 import ProfileSettings from "./ProfileSettings";
 import { useGetUserByIdQuery } from "../../../store/slices/userApiSlice";
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import EditProfileModal from "./EditProfileModal";
 import DeleteConfirmationModal from "../../common/ConfirmationModal";
 import { RiMailCheckLine } from "react-icons/ri";
@@ -25,7 +25,7 @@ const Profile = () => {
   const [isEditModalOpen, setIsEditModalOpen] = useState<boolean>(false);
 
   const { data: posts, refetch } = useGetUserByIdQuery(
-    getInitialToken("userToken") as string
+    GetInitialToken("userToken") as string
   );
 
   const renderSection = useCallback(() => {

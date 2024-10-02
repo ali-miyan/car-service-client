@@ -1,9 +1,9 @@
-import { getInitialToken } from "../../../helpers/getToken";
+import { GetInitialToken } from "../../../helpers/getToken";
 import { useGetUserByIdQuery } from "../../../store/slices/userApiSlice";
 
 const Wallet = () => {
   
-  const token = getInitialToken("userToken");
+  const token = GetInitialToken("userToken");
   const { data } = useGetUserByIdQuery(token as string);
 
   return (
