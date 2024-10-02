@@ -36,7 +36,7 @@ export const companyApiSlice = createApi({
         if (page) queryParams.push(`page=${encodeURIComponent(page)}`);
 
         const queryString =
-          queryParams.length > 0 ? `?${queryParams.join("&")}` : "";
+          queryParams?.length > 0 ? `?${queryParams.join("&")}` : "";
 
         return `/get-all-services${queryString}`;
       },

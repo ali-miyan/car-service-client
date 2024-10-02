@@ -72,7 +72,7 @@ const ServiceHeader = () => {
     <>
       <div className="p-4 mx-20 font-bai-regular">
         <Slider {...settings} className="service-slider">
-          {services && services.length > 0 ? (
+          {services && services?.length > 0 ? (
             services.map((service:any, index:number) => (
               <div key={index}>
                 <div

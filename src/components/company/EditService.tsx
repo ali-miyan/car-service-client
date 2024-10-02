@@ -137,7 +137,7 @@ const AddYourService: React.FC = () => {
 
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    if (files.length > 0) {
+    if (files?.length > 0) {
       setFormData((prevData: any) => ({
         ...prevData,
         workImages: prevData.workImages ? [...files] : files,
@@ -167,13 +167,13 @@ const AddYourService: React.FC = () => {
       formData.servicesPerDay
     );
     const logoError =
-      (formData.workImages as []).length > 0
+      (formData.workImages as [])?.length > 0
         ? ""
         : "Please provide atleast 1 work images";
     const packageError =
-      !basicSubService.length ||
-      !standardSubService.length ||
-      !premiumSubService.length
+      !basicSubService?.length ||
+      !standardSubService?.length ||
+      !premiumSubService?.length
         ? "packages cannot be empty"
         : "";
 

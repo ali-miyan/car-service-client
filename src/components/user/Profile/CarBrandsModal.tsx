@@ -218,7 +218,7 @@ const CarBrandsModal: React.FC<ModalPopsCustom> = ({
                 </a>
               ))}
             </div>
-            <p>{selectedCars.length === 0 && "No cars available"}</p>
+            <p>{selectedCars?.length === 0 && "No cars available"}</p>
           </div>
         ) : (
           <>

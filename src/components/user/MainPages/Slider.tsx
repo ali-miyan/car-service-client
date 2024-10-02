@@ -69,7 +69,7 @@ const VehicleService = () => {
     return <div><Loader /></div>;
   }
 
-  if (!servicesData || servicesData.length === 0) {
+  if (!servicesData || servicesData?.length === 0) {
     return <div>No services available</div>;
   }
 

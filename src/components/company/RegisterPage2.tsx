@@ -123,7 +123,7 @@ const Page2: React.FC = () => {
               onClick={() => setOpenModal(true)}
             >
               <span className="font-bai-regular">
-              {Object.keys((formData.address)).length === 0
+              {Object.keys((formData.address))?.length === 0
                 ? "Pick a location"
                 : `${((formData.address?.streetRegion) || "")}, ${((formData.address?.city) || "")}, ${
                   ((formData.address?.postcode) || "")

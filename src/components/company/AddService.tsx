@@ -88,7 +88,7 @@ const AddYourService: React.FC = () => {
   };
 
   useEffect(() => {
-    if (posts && posts.length > 0) {
+    if (posts && posts?.length > 0) {
       setSubservices(posts[0]?.subServices);
     }
   }, [posts]);
@@ -108,7 +108,7 @@ const AddYourService: React.FC = () => {
 
   const handleImage = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = Array.from(e.target.files || []);
-    if (files.length > 0) {
+    if (files?.length > 0) {
       setFormData((prevData: any) => ({
         ...prevData,
         workImages: prevData.workImages
@@ -161,13 +161,13 @@ const AddYourService: React.FC = () => {
     const servicePlaceError = validateInput("servicePlace", servicePlace);
     const termsError = validateInput("terms", formData.terms);
     const logoError =
-      (formData.workImages as []).length > 0
+      (formData.workImages as [])?.length > 0
         ? ""
         : "Please provide atleast 1 work images";
     const packageError =
-      !basicSubService.length ||
-      !standardSubService.length ||
-      !premiumSubService.length
+      !basicSubService?.length ||
+      !standardSubService?.length ||
+      !premiumSubService?.length
         ? "packages cannot be empty"
         : "";
 
@@ -370,7 +370,7 @@ const AddYourService: React.FC = () => {
                 onChange={handleImage}
                 className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
               />
-              {formData.workImages && (formData.workImages as []).length > 0 ? (
+              {formData.workImages && (formData.workImages as [])?.length > 0 ? (
                 <div className="flex flex-wrap">
                   {(formData.workImages as []).map(
                     (image: any, index: number) => (
@@ -446,7 +446,7 @@ const AddYourService: React.FC = () => {
                     </div>
                   </div>
                   <ul>
-                    {basicSubService.length === 0 && (
+                    {basicSubService?.length === 0 && (
                       <p>None has been selected</p>
                     )}
                     {posts &&
@@ -500,7 +500,7 @@ const AddYourService: React.FC = () => {
                     </div>
                   </div>
                   <ul>
-                    {standardSubService.length === 0 && (
+                    {standardSubService?.length === 0 && (
                       <p>None has been selected</p>
                     )}
                     {posts &&
@@ -553,7 +553,7 @@ const AddYourService: React.FC = () => {
                     </div>
                   </div>
                   <ul>
-                    {premiumSubService.length === 0 && (
+                    {premiumSubService?.length === 0 && (
                       <p>None has been selected</p>
                     )}
                     {posts &&

@@ -26,7 +26,7 @@ const CustomerDetails = () => {
 
 
   const handleNext = useCallback(() => {
-    if (Object.keys(address).length === 0) {
+    if (Object.keys(address)?.length === 0) {
       notifyError("please select a address");
       return;
     } else if (!selectedCarId) {
@@ -69,7 +69,7 @@ const CustomerDetails = () => {
             onClick={() => setLocationModalOpen(true)}
           >
             <span className="font-bai-regular">
-              {Object.keys(address).length === 0
+              {Object.keys(address)?.length === 0
                 ? "Pick a location"
                 : `${address.streetRegion || ""}, ${address.city || ""}, ${
                     address.postcode || ""
@@ -87,7 +87,7 @@ const CustomerDetails = () => {
           SELECT YOUR CAR
         </h1>
         <div className="flex flex-wrap justify-center w-full  mb-6">
-          {posts?.car.length ? (
+          {posts?.car?.length ? (
             posts.car.map((car:any) => (
               <div
                 key={car._id}

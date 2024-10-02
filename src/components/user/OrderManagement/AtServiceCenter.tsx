@@ -77,7 +77,7 @@ const AtServiceCenter = () => {
         </h1>
 
         <div className="flex flex-wrap justify-center  font-bai-regular w-full max-w-6xl">
-          {posts?.car && posts.car.length > 0 ? (
+          {posts?.car && posts.car?.length > 0 ? (
             posts.car.map((car: any) => (
               <div
                 key={car._id}

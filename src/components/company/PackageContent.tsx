@@ -48,7 +48,7 @@ const PackageContent = ({
       validationErrors.workingHours = "Please enter valid working hours.";
     }
 
-    if (Object.keys(validationErrors).length > 0) {
+    if (Object.keys(validationErrors)?.length > 0) {
       setErrors(validationErrors);
       return;
     }

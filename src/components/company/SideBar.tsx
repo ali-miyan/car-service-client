@@ -14,7 +14,7 @@ import { useDispatch } from "react-redux";
 import { setCompanyToken } from "../../context/OrderContext";
 
 const Sidebar = ({ children }: { children: ReactNode }) => {
-  const id = useMemo(() => GetInitialToken("companyToken"), []);
+  const id = GetInitialToken("companyToken")
 
   const location = useLocation();
   const dispatch = useDispatch();

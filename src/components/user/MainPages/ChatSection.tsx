@@ -168,7 +168,7 @@ const ChatSection = ({ selectedCompany, setSelectedCompany, token }: any) => {
             ref={chatContainerRef}
             className="flex-1 min-h-[calc(85vh-150px)] max-h-[calc(80vh-100px)] p-4 border-t border-gray-200 overflow-y-auto no-scrollbar"
           >
-            {chatMessages?.messages.length > 0 ? (
+            {chatMessages?.messages?.length > 0 ? (
               <>
                 {chatMessages?.messages?.map((msg, index) => (
                   <React.Fragment key={index}>

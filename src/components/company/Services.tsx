@@ -166,7 +166,7 @@ const ServiceList = () => {
                     </div>
                   </td>
                 </tr>
-              ) : currentPosts && currentPosts.length > 0 ? (
+              ) : currentPosts && currentPosts?.length > 0 ? (
                 currentPosts.map((post: any, index: number) => (
                   <tr
                     className="px-6 py-4 whitespace-nowrap bg-white"

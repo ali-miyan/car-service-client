@@ -29,7 +29,7 @@ const ListPackages = ({
                 </div>
               </div>
               <ul>
-                {basic.length === 0 && <p>no services have been added</p>}
+                {basic?.length === 0 && <p>no services have been added</p>}
                 {basic &&
                   basic.subServices.map((val: any) => (
                     <li
@@ -63,7 +63,7 @@ const ListPackages = ({
                 </div>
               </div>
               <ul>
-                {standard.length === 0 && <p>no services have been added</p>}
+                {standard?.length === 0 && <p>no services have been added</p>}
                 {standard &&
                   standard.subServices.map((val: any) => (
                     <li
@@ -97,7 +97,7 @@ const ListPackages = ({
                 </div>
               </div>
               <ul>
-                {premium.length === 0 && <p>no services have been added</p>}
+                {premium?.length === 0 && <p>no services have been added</p>}
                 {premium &&
                   premium.subServices.map((val: any) => (
                     <li

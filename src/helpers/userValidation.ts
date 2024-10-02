@@ -6,35 +6,35 @@ export const validateInput = (name: string, value: any | undefined) => {
     case "ownerName":
       if (!value) {
         error = "ownername is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
     case "companyName":
       if (!value) {
         error = "Company name is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
     case "serviceName":
       if (!value) {
         error = "servicename is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
     case "year":
       if (!value) {
         error = "Year is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
     case "description":
       if (!value) {
         error = "description is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
@@ -46,7 +46,7 @@ export const validateInput = (name: string, value: any | undefined) => {
     case "username":
       if (!value) {
         error = "Username is required";
-      } else if (value.length < 3) {
+      } else if (value?.length < 3) {
         error = "At least 3 characters";
       }
       break;
@@ -67,35 +67,35 @@ export const validateInput = (name: string, value: any | undefined) => {
     case "password":
       if (!value) {
         error = "Password is required";
-      } else if (value.length < 10) {
+      } else if (value?.length < 10) {
         error = "At least 10 characters long";
       }
       break;
     case "newPassword":
       if (!value) {
         error = "new password is required";
-      } else if (value.length < 10) {
+      } else if (value?.length < 10) {
         error = "At least 10 characters long";
       }
       break;
     case "contact1":
       if (!value) {
         error = "contact-1 is required";
-      } else if (value.length !== 10) {
+      } else if (value?.length !== 10) {
         error = "Contact-1 must be 10";
       }
       break;
     case "contact2":
       if (!value) {
         error = "contact-2 is required";
-      } else if (value.length !== 10) {
+      } else if (value?.length !== 10) {
         error = "Contact-2 must be 10";
       }
       break;
     case "licenseNumber":
       if (!value) {
         error = "license number is required";
-      } else if (value.length !== 12) {
+      } else if (value?.length !== 12) {
         error = "license number 12";
       }
       break;
@@ -107,7 +107,7 @@ export const validateInput = (name: string, value: any | undefined) => {
     case "confirmPassword":
       if (!value) {
         error = "confirm password is required";
-      } else if (value.length < 10) {
+      } else if (value?.length < 10) {
         error = "At least 10 characters long";
       }
       break;

@@ -75,7 +75,7 @@ const ListBooking = () => {
                     </div>
                   </td>
                 </tr>
-              ) : currentPosts && currentPosts.length > 0 ? (
+              ) : currentPosts && currentPosts?.length > 0 ? (
                 currentPosts.reverse().map((post: any, index: number) => (
                   <tr
                     className="bg-white px-6 py-4 whitespace-nowrap"
