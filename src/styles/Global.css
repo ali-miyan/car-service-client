@@ -1,0 +1,10 @@
+.calendar__month-content span {
+  color: rgb(187, 0, 0) !important;
+  text-transform: uppercase !important;
+  font-size: medium !important;
+}
+
+.calendar__day-reservation {
+  background: #ff000017 !important;
+  color: black !important;
+}
